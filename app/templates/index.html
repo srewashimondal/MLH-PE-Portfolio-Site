@@ -14,8 +14,8 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
 
-    <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
-    <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon" />
     <title>{{ title }}</title>
 </head>
 
@@ -27,11 +27,11 @@
                     <img src="./static/img/logo.svg" />
                 </div>
             </a>
-            <!-- Nav Bar for Each Fellow -->
+            <!-- Hobbies and Experience -->
             <div class="nav-buttons">
-                <button class="nav-button jawad">Jawad Kabir</button>
-                <button class="nav-button srewashi">Srewashi Mondal</button>
-        </div>
+                <a href="{{ url_for('experience') }}" class="nav-button work">Work Experience</a>
+                <a href="{{ url_for('hobbies') }}" class="nav-button hobbies">Hobbies</a>
+            </div>
         </div>
     </header>
 
