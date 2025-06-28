@@ -235,7 +235,7 @@ body {
     max-width: 1200px;
     margin: 80px auto;
     text-align: center;
-    padding: 0 180px;
+    padding: 0 120px;
 }
 
 .experience-container h1 {
@@ -334,7 +334,7 @@ body {
     margin: 80px auto;
     padding: 0 20px;
     text-align: center;
-    padding-top: 80px;
+    padding-top: 40px;
 }
 
 .hobbies-container h1 {
@@ -458,7 +458,7 @@ body {
     margin: 80px auto;
     padding-left: 150px;
     padding-right: 150px;
-    padding-top: 60px;
+    padding-top: 40px;
 }
 
 .education-section h1, .education-2-section h1 {
