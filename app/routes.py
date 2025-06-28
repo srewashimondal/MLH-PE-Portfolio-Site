@@ -7,7 +7,69 @@ def index():
 
 @app.route('/experience')
 def experience():
-    return render_template('experience.html')
+    experiences = [
+        {
+            'title': 'MLH Production Engineering Fellow',
+            'company': 'Meta x Major League Hacking',
+            'location': 'Remote',
+            'date': '2025',
+            'type': 'Fellowship',
+            'description': 'Learning and applying Linux-based development by building scalable applications on DigitalOcean with Docker and Kubernetes, automating CI/CD pipelines using GitHub and GitHub Actions, and collaborating in a remote SCRUM team.',
+            'achievements': [
+                'Collaborated with 10 fellows',
+                'Learned production engineering practices',
+                'Learned to use Linux commands and apply for lessons'
+            ],
+            'technologies': ['Linux', 'HTML', 'CSS', 'Flask', 'DigitalOcean', 'VPS', 'Git', 'Github'],
+            'icon': 'fa-star' 
+        },
+        {
+            'title': 'Artificial Intelligence Fellow',
+            'company': 'AI4ALL',
+            'location': 'Remote',
+            'date': '2025',
+            'type': 'Fellowship',
+            'description': 'Building a personalized book recommendation system using NLP techniques and KNN on Goodreads datasets. Applying Python, Pandas, NumPy, Scikit-Learn and Matplotlib to analyze user inputs in Google Collab.',
+            'achievements': [
+                'Cleaned and processed the Goodreads dataset using Python, Pandas, and NumPy to extract meaningful features for model training and evaluation.',
+                'Created clear data visualizations with Matplotlib to communicate user rating distributions and recommendation results to stakeholders in Google Colab.',
+                'Participated in weekly meetings with peers and mentors',
+            ],
+            'technologies': ['Python', 'Google Colab', 'Numpy', 'Pandas', 'Matplotlib', 'Scikit-learn'],
+            'icon': 'fa-book'
+        },
+        {
+            'title': 'AI Studio Intern',
+            'company': 'Meta',
+            'location': 'Remote',
+            'date': '2024-2025',
+            'type': 'Internship',
+            'description': 'Developed and fine-tuned a BERT-based NLP model using the RedditBias dataset to identify and evaluate demographic bias in text datasets, leveraging Hugging Face transformers and custom evaluation metrics for robust bias detection.',
+            'achievements': [
+                'Created a BERT-based NLP model to find and measure bias in Reddit comments.',
+                'Prepared and cleaned large text datasets to improve model results.',
+            ],
+            'technologies': ['Python', 'Google Colab', 'Numpy', 'Pandas', 'Matplotlib', 'Scikit-learn'],
+            'icon': 'fa-code'
+        },
+        {
+            'title': 'Software Engineering Intern',
+            'company': 'MyFiLi.com',
+            'location': 'Remote',
+            'date': '2024',
+            'type': 'Internship',
+            'description': 'Programmed 5 interactive financial literacy games using JavaScript and event-driven programming in an Agile/Scrum environment, contributing to a 35% increase in users and reaching 5,000+ students across 20+ schools through engaging, hands-on learning experiences.',
+            'achievements': [
+                'Reduced page load times by 30% through front-end debugging and optimization using Chrome Developer Tools.',
+                'Managed tasks and projects efficiently using Trello, Slack, Airtable, and Microsoft applications.',
+                'Utilized Jupyter Notebooks and Airflow to support tasks.',
+            ],
+            'technologies': ['Python', 'Javascript', 'Visual Studio Code', 'Git', 'Github', 'Flask'],
+            'icon': 'fa-keyboard'
+        },
+    ]
+    return render_template('experience.html', experiences=experiences, title="Experience")
+
 
 @app.route('/hobbies')
 def hobbies():
