@@ -29,6 +29,7 @@
             </a>
             <!-- Hobbies and Experience -->
             <div class="nav-buttons">
+                <a href="{{ url_for('education') }}" class="nav-button work">Education</a>
                 <a href="{{ url_for('experience') }}" class="nav-button work">Work Experience</a>
                 <a href="{{ url_for('hobbies') }}" class="nav-button hobbies">Hobbies</a>
             </div>
@@ -55,50 +56,6 @@
         </div>
 
     </div>
-
-    <!--Education + Skills-->
-    <div class="cards-container">
-        <!-- Education Card -->
-        <div class="card">
-            <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
-            <p><strong>Bachelor of Science in Computer Science</strong><br>
-            City College of New York<br>
-            Expected 2026<br>
-            GPA: 3.6/4.0</p>
-
-            <p><strong>MLH Fellowship</strong><br>
-            Meta x Major League Hacking<br>2025<br>
-            12-week Production Engineering Fellowship</p>
-        </div>
-
-        <!-- Skills Card -->
-        <div class="card">
-            <h3><i class="fa-solid fa-code"></i> Skills</h3>
-            <div class="skills-tags">
-                <span>JavaScript</span>
-                <span>Python</span>
-                <span>React</span>
-                <span>Node.js</span>
-                <span>Flask</span>
-                <span>HTML/CSS</span>
-                <span>Git</span>
-                <span>PostgreSQL</span>
-                <span>Machine Learning</span>
-                <span>Data Analysis</span>
-                <span>TypeScript</span>
-            </div>
-        </div>
-
-        <!-- About Card -->
-        <div class="card">
-            <h3><i class="fa-solid fa-user"></i> About</h3>
-            <p><strong>Location:</strong> New York City, USA</p>
-            <p><strong>Status:</strong> Open to opportunities</p>
-            <p><strong>Focus:</strong> Full-Stack Development, Site Reliability Engineering</p>
-            <p><strong>Interests:</strong> Open Source, AI/ML</p>
-        </div>
-    </div>
-
 
 
 </body>

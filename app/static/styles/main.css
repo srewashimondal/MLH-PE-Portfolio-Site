@@ -451,3 +451,89 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
 }
 
+/*Education Timeline*/
+/* ====== Education Section Styling ====== */
+
+.education-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 60px;
+}
+
+.education-section h1, .education-2-section h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: rgb(22, 21, 21);
+}
+
+.split-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: rgb(54, 91, 53);
+}
+
+.split-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(161, 227, 255, 0.822);
+}
+
+.split-card .card-text {
+    flex: 1 1 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.split-card .card-text h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.split-card .card-text p {
+    margin: 5px 0 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.split-card .timeline-tags {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.split-card .timeline-tags span {
+    background: #e0e0ff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.split-card .card-image {
+    flex: 1 1 35%;
+    text-align: center;
+}
+
+.split-card .card-image img {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 250px;
+}
+
+/* Alternate background colors for each card (optional) */
+.timeline-content:nth-child(even) {
+    background: #f9f9ff;
+}

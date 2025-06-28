@@ -5,6 +5,10 @@ from flask import render_template
 def index():
     return render_template('index.html', title="MLH Fellow")
 
+@app.route('/education')
+def education():
+    return render_template('education.html', title="Education")
+
 @app.route('/experience')
 def experience():
     experiences = [

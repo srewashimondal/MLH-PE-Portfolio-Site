@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Personal Portfolio">
+    <meta property="og:description" content="My Personal Portfolio">
+    <meta property="og:url" content="{{ url }}">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon" />
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <header class="nav-bar">
+        <div class="nav-content">
+            <a href="/">
+                <div class="nav-logo">
+                    <img src="./static/img/logo.svg" />
+                </div>
+            </a>
+            <!-- Hobbies and Experience -->
+            <div class="nav-buttons">
+                <a href="{{ url_for('education') }}" class="nav-button work">Education</a>
+                <a href="{{ url_for('experience') }}" class="nav-button work">Work Experience</a>
+                <a href="{{ url_for('hobbies') }}" class="nav-button hobbies">Hobbies</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Education Timeline -->
+    <section class="education-section">
+        <h1>Education</h1>
+
+        <!-- First Education Entry -->
+        <div class="timeline-content split-card">
+            <div class="card-text">
+                <h3>Bachelor of Science in Computer Science</h3>
+                <p>City College of New York • Expected 2026</p>
+                <p>Pursuing a CS degree with focus on software engineering, algorithms, and data structures.</p>
+                <div class="timeline-tags">
+                    <span>Data Structures</span>
+                    <span>Algorithms</span>
+                    <span>Web Development</span>
+                    <span>Database Systems</span>
+                </div>
+            </div>
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='img/ccny.jpg') }}" alt="CCNY logo">
+            </div>
+        </div>
+
+        <!-- MLH Fellowship Entry -->
+        <div class="timeline-content split-card">
+            <div class="card-text">
+                <h3>MLH Fellowship</h3>
+                <p>Meta x Major League Hacking • 2025</p>
+                <p>12-week Production Engineering Fellowship, gaining hands-on industry skills.</p>
+            </div>
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='img/bths.jpg') }}" alt="MLH logo">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Skills and About -->
+    <section class="education-2-section">
+        <h1>Skills and About</h1>
+        <div class="cards-container two-columns">
+            <!-- Skills Card -->
+            <div class="card">
+                <h3><i class="fa-solid fa-code"></i> Skills</h3>
+                <div class="skills-tags">
+                    <span>JavaScript</span>
+                    <span>Python</span>
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>Flask</span>
+                    <span>HTML/CSS</span>
+                    <span>Git</span>
+                    <span>PostgreSQL</span>
+                    <span>Machine Learning</span>
+                    <span>Data Analysis</span>
+                    <span>TypeScript</span>
+                </div>
+            </div>
+
+            <!-- About Card -->
+            <div class="card">
+                <h3><i class="fa-solid fa-user"></i> About</h3>
+                <p><strong>Location:</strong> New York City, USA</p>
+                <p><strong>Status:</strong> Open to opportunities</p>
+                <p><strong>Focus:</strong> Full-Stack Development, Site Reliability Engineering</p>
+                <p><strong>Interests:</strong> Open Source, AI/ML</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
