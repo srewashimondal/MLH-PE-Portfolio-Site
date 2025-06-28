@@ -365,6 +365,7 @@ body {
     flex: 1 1 300px;
     max-width: 350px;
     text-align: left;
+    transition: all 0.3s ease;
 }
 
 .hobby-card h3 {
@@ -387,6 +388,12 @@ body {
     padding: 5px 10px;
     border-radius: 20px;
     font-size: 14px;
+}
+
+.hobby-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
 }
 
 /* ==========================
@@ -436,4 +443,11 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.image-grid img:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+}
+
