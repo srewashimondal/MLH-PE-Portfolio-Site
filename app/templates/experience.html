@@ -35,6 +35,41 @@
         </div>
     </header>
 
+    <main class="experience-container">
+        <h1>Work Experience</h1>
+        <p class="experience-intro">
+            My professional journey in software development, from academic beginnings to industry experience and the MLH Fellowship program.
+        </p>
+
+        <div class="experience-cards">
+            {% for exp in experiences %}
+            <div class="experience-card">
+                <h3><i class="fa {{ exp.icon }}"></i> {{ exp.title }}</h3>
+                <h4>{{ exp.company }}</h4>
+                <p><i class="fa fa-map-marker-alt"></i> {{ exp.location }} &nbsp; <i class="fa fa-calendar"></i> {{ exp.date }} &nbsp; <span class="exp-type">{{ exp.type }}</span></p>
+                <p>{{ exp.description }}</p>
+
+                <h5><i class="fa fa-trophy"></i> Key Achievements</h5>
+                <ul>
+                    {% for ach in exp.achievements %}
+                    <li>{{ ach }}</li>
+                    {% endfor %}
+                </ul>
+
+                <h5><i class="fa fa-code"></i> Technologies Used</h5>
+                <div class="tech-tags">
+                    {% for tech in exp.technologies %}
+                    <span>{{ tech }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
 
 </body>
 </html>

@@ -146,6 +146,16 @@ body {
     font-weight: 700;
 }
 
+/*Experience*/
+
+.experience-container {
+    max-width: 1200px;
+    margin: 80px auto;
+    text-align: center;
+    padding: 0 180px;
+}
+
+.experience-container h1 {
 
 /*Hobbies*/
 .hobbies-container {
@@ -166,6 +176,9 @@ body {
     margin-bottom: 10px;
 }
 
+
+.experience-intro {
+
 .hobbies-intro {
     font-size: 16px;
     color: #555;
@@ -173,10 +186,17 @@ body {
     margin: 0 auto 40px auto;
 }
 
+.experience-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.experience-card {
+
 .hobbies-cards {
 
 /*About Me*/
-/* About Me */
 .about-container {
     text-align: center;
     margin-top: 120px; /* increased spacing from navbar */
@@ -272,10 +292,42 @@ body {
 }
 
 .card {
+
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     padding: 20px;
+
+    text-align: left;
+}
+
+.experience-card h4, .experience-card h5 {
+    margin: 10px 0;
+}
+
+.experience-card h3 {
+    margin: 10px 0;
+    color: rgb(39, 110, 203);
+}
+
+.experience-card ul {
+    padding-left: 20px;
+}
+
+.experience-card li {
+    margin-bottom: 5px;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.tech-tags span {
+    background: #ffe550;
+
     flex: 1 1 300px;
     max-width: 350px;
     text-align: left;
@@ -318,6 +370,12 @@ body {
     border-radius: 20px;
     font-size: 14px;
 }
+
+.exp-type {
+    background: #e0e0ff;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
 
 .hobby-card i {
     color: #007bff; 
