@@ -35,6 +35,46 @@
         </div>
     </header>
 
+    <!--Hobbies Section-->
+    <main class="hobbies-container">
+        <h1>My Hobbies</h1>
+        <p class="hobbies-intro">
+            Beyond coding and technology, I'm passionate about exploring creative outlets and experiences that inspire my work and personal growth as an MLH Fellow.
+        </p>
+
+        <div class="hobbies-cards">
+            {% for hobby in hobbies %}
+            <div class="hobby-card">
+                <h3><i class="fa {{ hobby.icon }}"></i> {{ hobby.title }}</h3>
+                <p>{{ hobby.description }}</p>
+                <div class="hobby-tags">
+                    {% for tag in hobby.tags %}
+                    <span>{{ tag }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <section class="hobbies-images">
+    <h2>Here are some of my hobby photos!</h2>
+        <div class="image-grid">
+            <img src="{{ url_for('static', filename='img/hobby1.JPG') }}" alt="Photo 1">
+            <img src="{{ url_for('static', filename='img/hobby2.JPG') }}" alt="Photo 2">
+            <img src="{{ url_for('static', filename='img/hobby3.jpeg') }}" alt="Photo 3">
+            <img src="{{ url_for('static', filename='img/hobby4.jpeg') }}" alt="Photo 4">
+            <img src="{{ url_for('static', filename='img/hobby5.jpeg') }}" alt="Photo 5">
+            <img src="{{ url_for('static', filename='img/hobby6.webp') }}" alt="Photo 6">
+            <img src="{{ url_for('static', filename='img/hobby7.jpeg') }}" alt="Photo 7">
+            <img src="{{ url_for('static', filename='img/hobby8.jpeg') }}" alt="Photo 8">
+            <img src="{{ url_for('static', filename='img/hobby9.jpeg') }}" alt="Photo 9">
+            <img src="{{ url_for('static', filename='img/hobby10.jpeg') }}" alt="Photo 10">
+
+        </div>
+    </section>
 
 </body>
 </html>
