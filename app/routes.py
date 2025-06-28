@@ -77,7 +77,7 @@ def hobbies():
         {
             'icon': 'fa-camera',  
             'title': 'Photography',
-            'description': 'Capturing beuatiful moments with my family and friends on my digital camera.',
+            'description': 'Capturing beautiful moments with my family and friends on my digital camera.',
             'tags': ['Portrait Photography', 'Landscape', 'Street Photography', 'Selfies']
         },
         {
