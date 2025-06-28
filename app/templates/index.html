@@ -34,19 +34,86 @@
             </div>
         </div>
     </header>
-
-    <div class="profile">
+    
+    <div class="about-container">
         <div class="profile-picture">
-            <div class="profile-person">
-                <img src="./static/img/logo.jpg" class="profile-img">
-                <h1>MLH Fellow</h1>
+            <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Profile Photo" class="about-photo">
+        </div>
+
+        <h1 class="about-name">Srewashi Mondal</h1>
+        <p class="about-title">MLH Fellow | Full-Stack Developer</p>
+
+        <p class="about-description">
+            Passionate about creating innovative web applications and contributing to open source projects.
+            Currently participating in the MLH Fellowship program, building impactful solutions with modern technologies.
+        </p>
+
+        <div class="about-links">
+            <a href="mailto:srewashimondal@gmail.com">📧 Email</a>
+            <a href="https://github.com/srewashimondal" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/srewashi-mondal/" target="_blank">LinkedIn</a>
+        </div>
+
+        <div class="about-extra">
+            <div class="about-detail">
+                <span class="label">Location:</span>
+                Based in New York City, originally from West Bengal, India.
             </div>
-            <div class="profile-person">
-                <img src="./static/img/logo.jpg" class="profile-img">
-                <h1>MLH Fellow</h1>
+            <div class="about-detail">
+                <span class="label">Languages:</span>
+                Bengali, Hindi, English.
+            </div>
+            <div class="about-detail">
+                <span class="label">Goals:</span>
+                Building impactful web applications and preparing for SWE new grad roles.
             </div>
         </div>
     </div>
+
+    <!--Education + Skills-->
+    <div class="cards-container">
+        <!-- Education Card -->
+        <div class="card">
+            <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+            <p><strong>Bachelor of Science in Computer Science</strong><br>
+            City College of New York<br>
+            Expected 2026<br>
+            GPA: 3.6/4.0</p>
+
+            <p><strong>MLH Fellowship</strong><br>
+            Meta x Major League Hacking<br>2025<br>
+            12-week Production Engineering Fellowship</p>
+        </div>
+
+        <!-- Skills Card -->
+        <div class="card">
+            <h3><i class="fa-solid fa-code"></i> Skills</h3>
+            <div class="skills-tags">
+                <span>JavaScript</span>
+                <span>Python</span>
+                <span>React</span>
+                <span>Node.js</span>
+                <span>Flask</span>
+                <span>HTML/CSS</span>
+                <span>Git</span>
+                <span>PostgreSQL</span>
+                <span>Machine Learning</span>
+                <span>Data Analysis</span>
+                <span>TypeScript</span>
+            </div>
+        </div>
+
+        <!-- About Card -->
+        <div class="card">
+            <h3><i class="fa-solid fa-user"></i> About</h3>
+            <p><strong>Location:</strong> New York City, USA</p>
+            <p><strong>Status:</strong> Open to opportunities</p>
+            <p><strong>Focus:</strong> Full-Stack Development, Site Reliability Engineering</p>
+            <p><strong>Interests:</strong> Open Source, AI/ML</p>
+        </div>
+    </div>
+
+
 
 </body>
 </html>
