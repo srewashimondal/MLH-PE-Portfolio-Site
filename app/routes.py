@@ -115,7 +115,7 @@ def hobbies():
         {
             'icon': 'fa-globe',
             'title': 'Traveling',
-            'description': 'As of today, I have not traveled to many countries, but I love the concept of traveling and plan to travel a lot in the future with my family.',
+            'description': 'As of today, I have not traveled to many countries, but I love the concept of traveling and plan to travel a lot in the future with my family!!',
             'tags': ['United States of America', 'Canada', 'Bangladesh', 'India',]
         },
     ]
