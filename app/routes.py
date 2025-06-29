@@ -9,6 +9,10 @@ def index():
 def education():
     return render_template('education.html', title="Education")
 
+@app.route('/map')
+def map():
+    return render_template('map.html', title="Map")
+
 @app.route('/experience')
 def experience():
     experiences = [
