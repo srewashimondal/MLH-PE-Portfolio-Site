@@ -295,12 +295,13 @@ body {
 }
 
 .card {
-    background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 30px;
     flex: 1 1 300px;
     max-width: 350px;
+    background: linear-gradient(135deg, #fbfdea, #e3f6f5, #d0d5f4);
 }
 
 .card h3 {
@@ -309,6 +310,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    text-decoration: underline;
 }
 
 .skills-tags {
