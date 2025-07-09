@@ -1,6 +1,11 @@
 from app import app
 from flask import render_template
 
+from flask import request
+from playhouse.shortcuts import model_to_dict
+from app.__init__ import TimelinePost
+
+
 @app.route('/')
 def index():
     return render_template('index.html', title="MLH Fellow")
@@ -121,3 +126,19 @@ def hobbies():
     ]
     return render_template('hobbies.html', hobbies=hobbies_list, title="Hobbies")
 
+@app.route('/api/timeline_post', methods=['POST'])
+def post_time_line_post():
+    name = request.form['name']
+    email = request.form['email']
+    content = request.form['content']
+    timeline_post = TimelinePost.create(name=name, email=email, content=content)
+    return model_to_dict(timeline_post)
+
+@app.route('/api/timeline_post', methods=['GET'])
+def get_time_line_post():
+    return {
+        'timeline_posts': [
+            model_to_dict(p)
+            for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
+        ]
+    }
