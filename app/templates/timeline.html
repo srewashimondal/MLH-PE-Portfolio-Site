@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Personal Portfolio">
+    <meta property="og:description" content="My Personal Portfolio">
+    <meta property="og:url" content="{{ url }}">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon" />
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <header class="nav-bar">
+        <div class="nav-content">
+            <a href="/">
+                <div class="nav-logo">
+                    <img src="./static/img/logo.svg" />
+                </div>
+            </a>
+            <!-- Nav Bar -->
+            <div class="nav-buttons">
+                <a href="{{ url_for('education') }}" class="nav-button work">Education</a>
+                <a href="{{ url_for('experience') }}" class="nav-button work">Work Experience</a>
+                <a href="{{ url_for('hobbies') }}" class="nav-button hobbies">Hobbies</a>
+                <a href="{{ url_for('map') }}" class="nav-button hobbies">Map</a>
+                <a href="{{ url_for('timeline') }}" class="nav-button hobbies">Timeline</a>
+            </div>
+        </div>
+    </header>
+
+    <!--Timeline Section-->
+    <main class="timeline-container">
+        <h1>My Timeline</h1>
+        <p class="timeline-intro">
+            Welcome to my Timeline! Just enter name, email, and content of message to post on timeline!
+        </p>
+
+        <form id="timeline-form">
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="content">Content</label><br>
+            <textarea id="content" name="content" rows="3" required></textarea><br>
+
+            <button type="submit">Post</button>
+        </form>
+
+        <!-- Timeline Posts -->
+        <h2>Posts</h2>
+        <ul id="timeline-posts">
+        </ul>
+
+
+    <script>
+        async function fetchTimelinePosts() {
+            const response = await fetch('/api/timeline_post');
+            const data = await response.json();
+            const postsList = document.getElementById('timeline-posts');
+            postsList.innerHTML = '';
+
+            data.timeline_posts.forEach(post => {
+                const li = document.createElement('li');
+                li.className = 'timeline-post';
+                li.innerHTML = `<strong>${post.name}</strong> (${post.email})<br>${post.content}<br><small>${post.created_at}</small>`;
+                postsList.appendChild(li);
+            });
+        }
+
+        // Form submissions
+        document.getElementById('timeline-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const content = document.getElementById('content').value;
+
+            const formData = new URLSearchParams();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('content', content);
+
+            await fetch('/api/timeline_post', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: formData.toString(),
+            });
+
+            e.target.reset();
+            fetchTimelinePosts();
+        });
+
+        fetchTimelinePosts();
+    </script>
+
+    </main>
+
+
+</body>
+</html>
