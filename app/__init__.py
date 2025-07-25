@@ -3,10 +3,11 @@ from peewee import *
 from dotenv import load_dotenv
 import os
 import datetime
+import time
 
 load_dotenv()
 app = Flask(__name__)
-from app import routes 
+
 
 if os.getenv("TESTING") == "true":
     print("Running in test mode")
@@ -20,7 +21,21 @@ else:
         port=3306,
     )
 
-print(mydb)
+print("Using DB:", mydb)
+
+# Retry DB connection
+MAX_RETRIES = 10
+for attempt in range(MAX_RETRIES):
+    try:
+        mydb.connect()
+        print("Connected to database.")
+        break
+    except Exception as e:
+        print(f"DB connect failed (attempt {attempt+1}): {e}")
+        time.sleep(3)
+else:
+    raise Exception("DB connection failed after retries")
+
 
 class TimelinePost(Model):
     name = CharField()
@@ -30,6 +45,7 @@ class TimelinePost(Model):
 
     class Meta:
         database = mydb
-        
-mydb.connect()
+
 mydb.create_tables([TimelinePost])
+
+from app import routes
