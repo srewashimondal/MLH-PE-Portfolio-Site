@@ -49,3 +49,4 @@ class TimelinePost(Model):
 mydb.create_tables([TimelinePost])
 
 from app import routes
+

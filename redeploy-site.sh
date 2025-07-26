@@ -7,9 +7,8 @@ cd ~/MLH-PE-Portfolio-Site
 git fetch
 git reset origin/main --hard
 
-# Enter python virtual environment and install dependencies
-source python3-virtualenv/bin/activate
-pip install -r requirements.txt
+# Shut down old containers to avoid memory issues
+docker compose -f docker-compose.prod.yml down
 
-# Restart myportfolio service
-systemctl restart myportfolio.service
+# Rebuild and restart containers
+docker compose -f docker-compose.prod.yml up -d --build
