@@ -7,7 +7,6 @@ services:
     env_file:
       - .env
     ports:
-      - "80:5000"
     depends_on:
       - mysql
 
