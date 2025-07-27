@@ -23,6 +23,7 @@ services:
       - .env
     volumes:
       - mydatabase:/var/lib/mysql
+      
 
 volumes:
   mydatabase:
