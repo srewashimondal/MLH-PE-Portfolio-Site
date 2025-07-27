@@ -6,7 +6,6 @@ services:
     restart: always
     env_file:
       - .env
-    ports:
     depends_on:
       - mysql
 
